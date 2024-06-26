@@ -1,0 +1,286 @@
+*{
+    
+    padding: 0px;
+    box-sizing: border-box;
+    outline: none;
+    font-family: initial;
+    
+}
+html {
+    overflow-x: hidden;
+}
+body{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 330vh;
+    line-height: 1.6;
+}
+.icono{
+    width: 700px;
+}
+.logo{
+    width: 120px;
+    height: 100px;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 8vh;
+   
+}
+.ham{
+    display: none;
+   cursor: pointer;
+   border: none;
+   margin: 0;
+   padding: 0;
+   background-color: transparent;
+}
+.ham span{
+    display: block;
+    background-color: black;
+    height: 3px;
+    width: 28px;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+.enlaces-menu{
+    display: flex;
+    padding: 0;
+}
+.enlaces-menu li{
+    padding: 0 40px;
+    list-style-type: none;
+    transition: 0.3s;
+}
+
+.enlaces-menu li a{
+ text-decoration: none;
+ font-size: 1.5rem;
+ font-family: initial;
+ color: black;
+ text-align: right;
+}
+.enlaces-menu li:hover{
+    background-color: rgba(235, 176, 87, 0.774);
+    color: white;
+}
+/*MOBILE*/
+@media (max-width: 780px){
+    body{
+        overflow: hidden;
+        min-height: 350vh;
+    }
+    .logo{
+        padding-left: 25px;
+    }
+    .ham{
+        display: block;
+        position: absolute;
+        top:15px;
+        right: 25px;
+        transition: 0.2s 0.1s;
+    }
+    .ham:hover{
+        transform: rotate(360deg);
+    }
+    nav{
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    .enlaces-menu{
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 92vh;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: none;
+        opacity: 0;
+    }
+    .enlaces-menu li{
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+}
+@keyframes muestraMenu{
+    from{opacity:0;}
+    to{opacity: 1;}
+}
+.enlaces-menu.activado{
+    display: flex;
+    animation: muestraMenu 350ms ease-in-out both;/*ease in out quiere decir que va a terminar y empezar lento */
+}
+
+.br-1.animado{
+    transform: rotate(-45deg) translate(-10px, 8px);
+}
+.br-2.animado{
+    opacity: 0;
+}
+.br-3.animado{
+    transform: rotate(45deg) translate(-10px, -8px);
+}
+
+  .wrap{
+    width: 100%;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:  linear-gradient(rgba(66, 66, 66, 0.5), rgba(30, 30, 31, 0.5)),url(imagenes/3d-rendering-modern-dining-room-living-room-with-luxury-decor.jpg);
+    background-size: cover;
+    background-position: center;
+    transform: translateX(0);
+    animation: slide 15s infinite;
+    flex-shrink: 0;
+  }
+  .wrap-texto{
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    width: 50%;
+    top:30%;
+    left: 10%;
+  }
+
+ .Inscribirse {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 12.5px 30px;
+    border: 0;
+    border-radius: 100px;
+    background-color: #eca450;
+    color: #ffffff;
+    font-weight: Bold;
+    transition: all 0.5s;
+ 
+  }
+  
+  .Inscribirse:hover {
+    background-color: #ac861e;
+
+  }
+  
+  .Inscribirse:active {
+    background-color:#eca450;
+    transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
+  }
+@media (max-width:430px) {
+    .wrap-texto h1{
+        font-size: 40px;
+        height: 0px;
+    }
+    
+}
+
+#productos{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 7em;
+    padding: 2em 0;
+    justify-content: center;
+}
+.card{
+    background-color: white;
+    max-width: 15em ;
+    margin-top: 1em ;
+    padding:  1em;
+    border-radius: 5px; 
+    box-shadow: 1px 2px 3px  rgba(168, 166, 162, 0.884); 
+    transition: all 0.25s;
+}
+.card:hover{
+    transform: translateY(-15px);
+    box-shadow: 1em 2em 2.5em  rgba(218, 180, 110, 0.884); 
+}
+img{
+    max-width: 100%;
+    object-fit: contain;
+    height: 13em;
+}
+ h5, h6{
+    font-size: 18px;
+    font-family: initial;
+}
+
+
+.footer{
+    position:absolute;
+    width: 100%;
+    background-color: rgba(221, 170, 75, 0.884) ;
+    min-height: 100px;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.social-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin:10px 5px;
+    flex-wrap: wrap;
+}
+.icon-elem{
+    list-style: none;
+}
+.icon{
+    color: white;
+    font-size: 32px;
+    display: inline-block;
+    margin: 0px 10px;
+    transition: 0.5s;
+}
+.icon:hover{
+    transform: translateY(-10px);
+}
+.text{
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.menuMobile{
+   
+    display: none;
+    
+}
+
+@media screen and (max-width: 720px){
+    body{
+        min-height: 380vh;
+    }
+    img{
+        max-width: 100%;
+        object-fit: contain;
+        height: 10em;
+    }
+    .card{
+        max-width: 10em;
+        margin-top: 1em;
+    }
+    #productos{
+        grid-template-columns: auto auto;
+        grid-column-gap: 1em;
+    }
+}
+
+
+  
+   
+
+
+
+
