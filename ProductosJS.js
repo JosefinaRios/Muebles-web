@@ -25,6 +25,7 @@ function MostrarProductos(producto){
 
           <td><button onclick="MostrarFormularioModificar('${producto[i].idcod}', '${producto[i].titulo}', '${producto[i].precioPeso}', '${producto[i].precioDolar}', '${producto[i].fecha}')"  class="btnModificar">Modificar</button></td>      
               </tr>
+              
         `;       
     }
     document.getElementById('resultados').innerHTML = html;
@@ -106,7 +107,7 @@ function Borrar(idcod) {
              ObtenerProductos();
                 }
                 else{
-                    alert('El idcod no es valido');
+                    alert('El idcod no es valido');             
                 }
             })
 
@@ -134,6 +135,7 @@ function Borrar(idcod) {
      function Modificar() {
             fetch(urlBase, {
                 method: 'PATCH',
+                
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -161,6 +163,7 @@ function Borrar(idcod) {
             .catch(error => console.error('Error:', error));
          
     }
+
      
     
 
